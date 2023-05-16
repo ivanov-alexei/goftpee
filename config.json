@@ -1,0 +1,10 @@
+{
+  "address": "localhost",
+  "port": 21,
+  "users": [
+    {
+      "username": "root",
+      "password": "root"
+    }
+  ]
+}
