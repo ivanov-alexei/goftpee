@@ -91,7 +91,7 @@ func handleCommand(session *Session, input string, conn net.Conn) {
 
 	switch {
 	case cmd == "QUIT":
-		sendMsg(conn, "221 Service closing control connection.")
+		sendMsg(conn, fmt.Sprintf(ResponseTemplate, StatusCloseControlConn, "Service closing control connection."))
 		if err = conn.Close(); err != nil {
 			panic(err)
 		}
@@ -197,7 +197,7 @@ func handleDataConnection(session *Session, controlConn net.Conn) (net.Conn, fun
 	sendMsg(controlConn, "150 File status okay; about to open data connection.")
 
 	return conn1, func () {
-		sendMsg(controlConn, fmt.Sprintf(ResponseTemplate, 250, "Data was transferred.\n"))
+		sendMsg(controlConn, fmt.Sprintf(ResponseTemplate, StatusFileActionOk, "Data was transferred.\n"))
 		if err != nil {
 			controlConn.Close()
 			panic(err)

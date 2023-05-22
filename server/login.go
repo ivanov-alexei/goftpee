@@ -28,7 +28,7 @@ func handleLogin(input string, user *User, users []*User) string {
 	user.Auth(users)
 
 	if !user.valid {
-		return fmt.Sprintf("%d %s", StatusNotLoggedIn, "530 Not logged in.")
+		return fmt.Sprintf("%d %s", StatusNotLoggedIn, "Not logged in.")
 	}
 	return fmt.Sprintf("%d %s", StatusUserLoggedIn, "User logged in, proceed.")
 }

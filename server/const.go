@@ -6,11 +6,12 @@ const (
 
 const (
 	// 2xx
-	StatusCommandOk    = 200
-	StatusServiceReady = 220
-	StatusPassiveMode  = 227
-	StatusUserLoggedIn = 230
-	StatusFileActionOk = 250
+	StatusCommandOk    		= 200
+	StatusServiceReady 		= 220
+	StatusCloseControlConn 	= 221
+	StatusPassiveMode  		= 227
+	StatusUserLoggedIn 		= 230
+	StatusFileActionOk 		= 250
 
 	// 3xx
 	StatusUserOk = 331
